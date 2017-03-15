@@ -2,8 +2,8 @@
 
     <div id="app">
 
-        <!--header 头部
-        <header class="header navbar navbar-default navbar-fixed-top">
+        <!--header 头部-->
+        <header class="header navbar navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#bs-navbar"
@@ -17,17 +17,17 @@
                 </div>
                 <nav id="bs-navbar" class="navbar-collapse collapse" aria-expanded="true">
                     <ul class="nav navbar-nav">
-                        <li><a href="/index">起步</a></li>
-                        <li><a href="../css/">全局CSS 样式</a></li>
-                        <li class="active"><a href="/about">组件</a></li>
-                        <li><a href="http://www.youzhan.org">网站实例</a></li>
+                        <router-link to="/index" tag="li"><a href="">起步</a></router-link>
+                        <router-link to="/about" tag="li"><a href="">组件</a></router-link>
+                        <router-link to="/css" tag="li"><a href="">全局CSS 样式</a></router-link>
+                        <router-link to="/div" tag="li"><a href="">网站实例</a></router-link>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="http://mb.bootcss.com">主题/模板</a></li>
                     </ul>
                 </nav>
             </div>
-        </header>-->
+        </header>
 
         <!--wrapper 主体-->
         <main class="wrapper">

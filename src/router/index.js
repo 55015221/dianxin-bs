@@ -29,7 +29,7 @@ const router = new VueRouter({
   mode: 'history',   //URL 不会带#
   base: __dirname,
   //设置 链接激活时使用的 CSS 类名。默认值可以通过路由的构造选项 linkActiveClass 来全局配置。
-  linkActiveClass: 'router-link-active',
+  linkActiveClass: 'active',
   routes: [
     { path: '/', redirect: '/index' },   //默认页面
     { path: '/index', name: 'index', component: Index },
