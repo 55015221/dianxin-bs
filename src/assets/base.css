@@ -1,0 +1,90 @@
+/*
+ * Fancy skip link
+ *
+ * Make it look a bit less "bare bones"
+ * Also includes focus suppression for the Chrome tabindex="-1" workaround
+ */
+
+#skippy {
+    display: block;
+    padding: 1em;
+    color: #fff;
+    background-color: #6f5499;
+    outline: 0;
+}
+
+#skippy .skiplink-text {
+    padding: .5em;
+    outline: 1px dotted;
+}
+
+#content:focus {
+    outline: none;
+}
+
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    position: relative; /* For scrollspy */
+}
+
+/*
+ * Main navigation
+ *
+ * Turn the `.navbar` at the top of the docs purple.
+ */
+
+.header {
+    margin-bottom: 0;
+    background-color: #fff;
+    border-bottom: 0;
+    background-color: rgba(255,255,255,0.8);
+    box-shadow: 1px 1px 8px rgba(0,0,0,.4);
+}
+.header .navbar-nav > li{
+    /*height: 80px;*/
+}
+.header .navbar-brand,
+.header .navbar-nav > li > a {
+    font-weight: 500;
+    color: #563d7c;
+}
+.header .navbar-nav > li > a:hover,
+.header .navbar-nav > .active > a,
+.header .navbar-nav > .active > a:hover {
+    color: #463265;
+    background-color: #1EA1E1;
+}
+.header .navbar-toggle .icon-bar {
+    background-color: #563d7c;
+}
+.header .navbar-header .navbar-toggle {
+    border-color: #fff;
+}
+.header .navbar-header .navbar-toggle:hover,
+.header .navbar-header .navbar-toggle:focus {
+    background-color: #f9f9f9;
+    border-color: #f9f9f9;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #f5f5f5;
+}
+
+
+
+.cut-off-divider{
+    margin: 80px 0;
+}
+
+.jumbotron{
+    background: none;
+}
