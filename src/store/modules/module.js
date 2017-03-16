@@ -3,11 +3,14 @@
  * 先写个假数据
  * @type {{totalTime: number, list: *[]}}
  */
-import response from '../../../static/mock/data.json'
+import mockJson from '../../../static/mock/data.json'
+import Vue from 'vue';
+
 
 const state = {
     loading: false,
-    //menuList: []
+    records: [],
+    menuList: []
 }
 
 const types = {
@@ -21,6 +24,13 @@ const types = {
     GET_CONTACT_FAILURE: 'GET_CONTACT_FAILURE',
 }
 
+
+// getters
+// const getters = {
+//   getProduct: state => state.record
+// }
+
+
 // actions
 const actions = {
     /**
@@ -29,13 +39,15 @@ const actions = {
     getMenuList({ commit }, payload) {
         commit(types.GET_MENU_LIST_PENDING)
         setTimeout(function () {
-            if (response.code === 1000) {
-                commit(types.GET_MENU_LIST_SUCCESS, response.data.menuList)
+            if (mockJson.code === 1000) {
+                setTimeout(function(){
+                    commit(types.GET_MENU_LIST_SUCCESS, mockJson.data.menuList)
+                },5000)
             } else {
                 commit(types.GET_MENU_LIST_FAILURE)
             }
         }, 500)
-        return response.data.menuList
+        return mockJson.data.menuList
     },
     /**
      * 获取联系方式
@@ -43,27 +55,35 @@ const actions = {
     getContact({ commit }, payload){
         commit(types.GET_CONTACT_PENDING)
         setTimeout(function () {
-            if (response.code === 1000) {
-                commit(types.GET_CONTACT_SUCCESS, response.data.contact)
+            if (mockJson.code === 1000) {
+                commit(types.GET_CONTACT_SUCCESS, mockJson.data.contact)
             } else {
                 commit(types.GET_CONTACT_FAILURE)
             }
         }, 500)
-        return response.data.contact
+        return mockJson.data.contact
     },
     /**
      * 获取产品数据
      */
     getProduct({ commit }, payload){
         commit(types.GET_CONTACT_PENDING)
-        setTimeout(function () {
-            if (response.code === 1000) {
-                commit(types.GET_CONTACT_SUCCESS, response.data.product)
-            } else {
-                commit(types.GET_CONTACT_FAILURE)
-            }
-        }, 500)
-        return response.data.product
+        //开始ajax请求
+        Vue.http.get('/static/mock/data.json').then((response) => {
+            //为了模拟网速过慢 使用延时
+            setTimeout(function () {
+                // 响应成功回调
+                if (response.status === 200 && response.body.code === 1000) {
+                    commit(types.GET_CONTACT_SUCCESS, response.body.data.product)
+                } else {
+                    commit(types.GET_CONTACT_FAILURE)
+                }
+            }, 500)
+        }, (response) => {
+            // 响应错误回调
+            console.log("http error", response)
+        });
+
     },
     /**
      * 获取客户问答数据
@@ -71,13 +91,13 @@ const actions = {
     getQuestions({ commit }, payload){
         commit(types.GET_CONTACT_PENDING)
         setTimeout(function () {
-            if (response.code === 1000) {
-                commit(types.GET_CONTACT_SUCCESS, response.data.questions)
+            if (mockJson.code === 1000) {
+                commit(types.GET_CONTACT_SUCCESS, mockJson.data.questions)
             } else {
                 commit(types.GET_CONTACT_FAILURE)
             }
         }, 500)
-        return response.data.questions
+        return mockJson.data.questions
     },
     /**
      * 获取关于我们数据
@@ -85,13 +105,13 @@ const actions = {
     getAbout({ commit }, payload){
         commit(types.GET_CONTACT_PENDING)
         setTimeout(function () {
-            if (response.code === 1000) {
-                commit(types.GET_CONTACT_SUCCESS, response.data.about)
+            if (mockJson.code === 1000) {
+                commit(types.GET_CONTACT_SUCCESS, mockJson.data.about)
             } else {
                 commit(types.GET_CONTACT_FAILURE)
             }
         }, 500)
-        return response.data.about
+        return mockJson.data.about
     },
     /**
      * 获取幻灯片数据
@@ -99,13 +119,13 @@ const actions = {
     getSlider({ commit }, payload){
         commit(types.GET_CONTACT_PENDING)
         setTimeout(function () {
-            if (response.code === 1000) {
-                commit(types.GET_CONTACT_SUCCESS, response.data.slider)
+            if (mockJson.code === 1000) {
+                commit(types.GET_CONTACT_SUCCESS, mockJson.data.slider)
             } else {
                 commit(types.GET_CONTACT_FAILURE)
             }
         }, 500)
-        return response.data.slider
+        return mockJson.data.slider
     }
 
 }
@@ -116,12 +136,12 @@ const mutations = {
         state.loading = true
     },
 
-    [types.GET_MENU_LIST_SUCCESS](state, res) {
-        state.menuList = res
+    [types.GET_MENU_LIST_SUCCESS](state, payload) {
+        state.menuList = payload
         state.loading = false
     },
 
-    [types.GET_MENU_LIST_FAILURE](state, res) {
+    [types.GET_MENU_LIST_FAILURE](state, payload) {
         state.loading = false
     },
 
@@ -133,12 +153,12 @@ const mutations = {
         state.loading = true
     },
 
-    [types.GET_CONTACT_SUCCESS](state, res) {
-        state.record = res
+    [types.GET_CONTACT_SUCCESS](state, payload) {
+        state.records = payload
         state.loading = false
     },
 
-    [types.GET_CONTACT_FAILURE](state, res) {
+    [types.GET_CONTACT_FAILURE](state, payload) {
         state.loading = false
     },
 

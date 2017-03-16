@@ -38,7 +38,10 @@
                 leave-class=""
                 leave-active-class=""
                 >
-                <router-view></router-view>
+
+            </transition>
+            <transition name="router-fade" mode="out-in">
+              <router-view></router-view>
             </transition>
         </main>
 
@@ -70,6 +73,11 @@ export default {
   components: {
 
   },
+  computed: {
+      ...mapState({
+          menuList: state => state.module.menuList
+      })
+  },
   created () {
       console.log("created app")
       this.$store.dispatch('getMenuList',{}).then((res) => {
@@ -78,16 +86,19 @@ export default {
   },
   mounted () {
       console.log("mounted app")
-      return {
-          ...mapState({
-              menuList: state => state.module.menuList,
-          })
-      }
+
   }
 }
 </script>
 
 <style scoped>
 #app {}
+
+.router-fade-enter-active, .router-fade-leave-active {
+      transition: opacity .3s;
+}
+.router-fade-enter, .router-fade-leave-active {
+      opacity: 0;
+}
 
 </style>
