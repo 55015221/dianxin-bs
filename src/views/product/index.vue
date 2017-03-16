@@ -17,7 +17,7 @@
             <div class="container">
 
                 <div class="row">
-                    <div class="col-sm-6 col-md-4" :key="index" v-for="(item, index) in record">
+                    <div class="col-sm-6 col-md-4 wow fadeInUp" v-bind:data-wow-delay="[(0.3*(index))+'s']" :key="index" v-for="(item, index) in record">
                         <img class="img-responsive" src="/static/images/placeholder_400x250.svg" alt="Generic placeholder image" width="400" height="250">
                         <h2>{{ item.title }}</h2>
                         <p>{{ item.content }}</p>
@@ -87,6 +87,14 @@ export default {
     },
     mounted () {
         console.log("mounted product")
+
+        this.$nextTick(function () {
+
+        })
+
+    },
+    beforeMount () {
+        new WOW().init();
     },
     methods:{
 
@@ -94,6 +102,6 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>

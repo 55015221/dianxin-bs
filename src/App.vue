@@ -48,7 +48,7 @@
         <footer class="footer">
             <div class="container">
                 <div style="transform: translate(0px, 0px); opacity: 1;">
-                    <span id="footer_0_0-content">Copyright &copy; 2017 The Project by <a href="#">Ant Motion</a>. All Rights Reserved</span>
+                    <span>Copyright &copy; 2017 The Project by <a href="#">Ant Motion</a>. All Rights Reserved</span>
                </div>
             </div>
         </footer>
@@ -87,7 +87,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #app {}
 
 </style>
