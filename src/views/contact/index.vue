@@ -1,8 +1,8 @@
 <template>
     <div class="template-wrapper">
 
-        <section style="background:#3dc0f1;">
-            <div class="jumbotron">
+        <section class="" style="background:#3dc0f1;">
+            <div class="jumbotron wow bounceIn">
                 <div class="container text-center">
                     <h2>您的信任，成就一切。</h2>
                     <p>你可以通过多种方式和我们取得联系</p>
