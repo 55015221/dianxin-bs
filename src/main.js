@@ -8,7 +8,7 @@ import store from './store'
 Vue.config.productionTip = false
 
 //加载全局css
-import './assets/base.css'
+import './assets/base.scss'
 
 /* eslint-disable no-new */
 new Vue({

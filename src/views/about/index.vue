@@ -17,7 +17,9 @@
                 <div class="col-md-4">
                     <img class="img-responsive" src="/static/images/placeholder_400x250.svg" alt="Generic placeholder image" width="400" height="250">
                     <h2>Heading</h2>
-                    <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+                    <p>对商品喜欢数，评论数，鉴定数，浏览数进行计数
+                       说起电商，肯定离不开商品，而附带商品有各种计数（喜欢数，评论数，鉴定数，浏览数,etc）
+                       Redis的命令都是原子性的，你可以轻松地利用INCR，DECR等命令来计数。</p>
                     <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
                 </div>
                 <div class="col-md-4">

@@ -3,7 +3,7 @@
     <div id="app">
 
         <!--header 头部-->
-        <header class="header navbar navbar-fixed-top">
+        <header class="header navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#bs-navbar"
