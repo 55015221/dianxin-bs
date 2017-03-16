@@ -102,6 +102,12 @@ body {
     background: #f9f9f9;
     border-color: #f9f9f9;
 }
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover {
+    color: #39f;
+    background: none;
+}
 
 .footer {
     position: absolute;
