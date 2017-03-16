@@ -193,5 +193,8 @@ export default {
     background: none;
     border:none;
 }
+.contact-icon .thumbnail:hover {
+    color: #39f;
+}
 
 </style>

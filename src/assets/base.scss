@@ -24,6 +24,10 @@
     outline: none;
 }
 
+* {
+    -webkit-transition: color .3s ease;
+    transition: color .3s ease;
+}
 
 html {
     position: relative;
@@ -108,10 +112,21 @@ body {
     font-size: 12px;
 }
 
-
-
 .cut-off-divider{
+    position: relative;
     margin: 80px 0;
+}
+
+.cut-off-divider:before{
+    content: '';
+    display: block;
+    width: 80%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -40%;
+    height: 1px;
+    background: -webkit-radial-gradient(center, ellipse, rgba(0,0,0,0.2) 0, rgba(255,255,255,0) 75%);
 }
 
 .jumbotron{
