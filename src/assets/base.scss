@@ -1,3 +1,5 @@
+@import "normalize";
+@import "animate.css";
 /*
  * Fancy skip link
  *
@@ -66,18 +68,21 @@ body {
 .header .navbar-nav > li > a {
     color: #444;
 }
-.header .navbar-nav > li > a:hover,
-.header .navbar-nav > .active > a,
-.header .navbar-nav > .active > a:hover {
-    color: #39f;
-    background: none;
-}
+
 .header .in .navbar-nav > li > a:hover,
 .header .in .navbar-nav > .active > a,
 .header .in .navbar-nav > .active > a:hover {
     color: #39f;
     background: #f9f9f9;
 }
+
+.header .navbar-nav > li > a:hover,
+.header .navbar-nav > .active > a,
+.header .navbar-nav > .active > a:hover {
+    color: #39f;
+    background: none;
+}
+
 .header .navbar-toggle .icon-bar {
     background: #444;
 }
