@@ -5,12 +5,12 @@
     "menuList1":[
       {"label": "导航一", "link": "/index"},
       {"label": "导航三", "link": "/service"},
+      {"label": "业务合作", "link": "/service"},
       {"label": "联系我们", "link": "/contact"}
     ],
     "menuList":[
       {"label": "首页", "link": "/index"},
       {"label": "关于我们", "link": "/about"},
-      {"label": "业务合作", "link": "/service"},
       {"label": "产品与服务", "link": "/product"},
       {"label": "客户问答", "link": "/questions"},
       {"label": "解决方案", "link": "/solution"},
