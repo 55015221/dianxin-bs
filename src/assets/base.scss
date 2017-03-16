@@ -56,13 +56,16 @@ body {
 
 .header {
     background: #fff;
-
-    box-shadow: 1px 1px 8px rgba(0,0,0,.4);
-}
-.navbar {
-    background: #fff;
     padding-top: 15px;
     padding-bottom: 15px;
+    border-bottom: 1px solid #bbb;
+    box-shadow: 1px 1px 8px rgba(0,0,0,.4);
+}
+
+.navbar {
+    border: 0;
+    margin-bottom: 0;
+    background: none;
     opacity: .95;
 }
 .header .navbar-nav > li{

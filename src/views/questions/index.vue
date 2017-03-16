@@ -1,11 +1,12 @@
 <template>
     <div class="template-wrapper">
 
-        <section style="background:#5dcadd;">
+        <section style="background:rgb(224, 243, 246);">
             <div class="jumbotron">
                 <div class="container">
-                    <h2>产品与服务</h2>
-                    <p class="lead">集成报价单、订单、购销、交付、往来债权债务、工资、报销模块等提供用户认证以及信用指数据评估等服务 提升往来管理效率，提高往来管理效果，为客户整体业务发展提供支持</p>
+                    <h2>原版国内镜像</h2>
+                    <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
+                    <p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p>
                 </div>
             </div>
         </section>
@@ -15,13 +16,24 @@
         <!--content-->
         <section>
             <div class="container">
-
                 <div class="row">
-                    <div class="col-sm-6 col-md-4" :key="index" v-for="(item, index) in record">
+                    <div class="col-sm-6 col-md-4">
                         <img class="img-responsive" src="/static/images/placeholder_400x250.svg" alt="Generic placeholder image" width="400" height="250">
-                        <h2>{{ item.title }}</h2>
-                        <p>{{ item.content }}</p>
-                        <p><a class="btn btn-default" href="#" role="button">查看详情 »</a></p>
+                        <h2>原版国内镜像</h2>
+                        <p>最受欢迎的前端技术教程网站，但是国内用户一直不能访问，并且国内的中文翻译版本十分陈旧。因此做了个镜像，希望英文好的同学直接去看原版教程吧</p>
+                        <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <img class="img-responsive" src="/static/images/placeholder_400x250.svg" alt="Generic placeholder image" width="400" height="250">
+                        <h2>原版国内镜像</h2>
+                        <p>最受欢迎的前端技术教程网站，但是国内用户一直不能访问，并且国内的中文翻译版本十分陈旧。因此做了个镜像，希望英文好的同学直接去看原版教程吧</p>
+                        <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <img class="img-responsive" src="/static/images/placeholder_400x250.svg" alt="Generic placeholder image" width="400" height="250">
+                        <h2>原版国内镜像</h2>
+                        <p>最受欢迎的前端技术教程网站，但是国内用户一直不能访问，并且国内的中文翻译版本十分陈旧。因此做了个镜像，希望英文好的同学直接去看原版教程吧</p>
+                        <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
                     </div>
                 </div>
 
@@ -60,9 +72,9 @@
                         <img class="img-responsive center-block" data-src="/static/images/placeholder_400x250.svg" alt="500x500" src="/static/images/placeholder_400x250.svg" data-holder-rendered="true">
                     </div>
                 </div>
+
             </div>
         </section>
-
     </div>
 </template>
 
@@ -71,22 +83,18 @@
 
 
 export default {
-    name: 'product',
+    name: 'questions',
     data () {
         return {
-            record: {}
         }
     },
     components: {
     },
     created () {
-        console.log("created product")
-        this.$store.dispatch('getProduct', {}).then((res) => {
-            this.record = {...this.record, ...res}
-        })
+        console.log("created questions")
     },
     mounted () {
-        console.log("mounted product")
+        console.log("mounted questions")
     },
     methods:{
 

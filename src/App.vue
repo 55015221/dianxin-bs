@@ -3,29 +3,30 @@
     <div id="app">
 
         <!--header 头部-->
-        <header class="header navbar navbar-default navbar-fixed-top">
+        <header class="header navbar-fixed-top">
             <div class="container">
-                <div class="navbar-header">
-                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#bs-navbar"
-                            aria-controls="bs-navbar" aria-expanded="true">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a href="../" class="navbar-brand">Bootstrap</a>
+                <div class="navbar navbar-default">
+                    <div class="navbar-header">
+                        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#bs-navbar"
+                                aria-controls="bs-navbar" aria-expanded="true">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="/" class="navbar-brand">Bootstrap</a>
+                    </div>
+                    <nav id="bs-navbar" class="navbar-collapse collapse" aria-expanded="true">
+                        <ul class="nav navbar-nav">
+                            <template v-for="(item, index) in menuList">
+                                <router-link :to="item.link" tag="li"><a href="">{{ item.label }}</a></router-link>
+                            </template>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="">主题/模板</a></li>
+                        </ul>
+                    </nav>
                 </div>
-                <nav id="bs-navbar" class="navbar-collapse collapse" aria-expanded="true">
-                    <ul class="nav navbar-nav">
-                        <router-link to="/index" tag="li"><a href="">首页</a></router-link>
-                        <router-link to="/product" tag="li"><a href="">产品与服务</a></router-link>
-                        <router-link to="/about" tag="li"><a href="">关于我们</a></router-link>
-                        <router-link to="/contact" tag="li"><a href="">联系我们</a></router-link>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="http://mb.bootcss.com">主题/模板</a></li>
-                    </ul>
-                </nav>
             </div>
         </header>
 
@@ -57,11 +58,13 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 
 export default {
   name: 'app',
   data () {
     return {
+        menuList: {}
     }
   },
   components: {
@@ -69,9 +72,17 @@ export default {
   },
   created () {
       console.log("created app")
+      this.$store.dispatch('getMenuList',{}).then((res) => {
+          this.menuList = {...this.menuList, ...res}
+      })
   },
   mounted () {
       console.log("mounted app")
+      return {
+          ...mapState({
+              menuList: state => state.module.menuList,
+          })
+      }
   }
 }
 </script>

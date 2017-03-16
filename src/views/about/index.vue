@@ -1,13 +1,15 @@
 <template>
     <div class="template-wrapper">
 
-        <div class="jumbotron" style="background:#d9edf7;">
-            <div class="container">
-                <h1>原版国内镜像</h1>
-                <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
-                <p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p>
+        <section style="background:#d9edf7;">
+            <div class="jumbotron">
+                <div class="container">
+                    <h2>原版国内镜像</h2>
+                    <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
+                    <p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p>
+                </div>
             </div>
-        </div>
+        </section>
 
         <hr class="cut-off-divider">
 

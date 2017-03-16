@@ -1,12 +1,15 @@
 <template>
     <div class="template-wrapper">
 
-        <div class="jumbotron" style="background:#3dc0f1;">
-            <div class="container text-center">
-                <h2>您的信任，成就一切。</h2>
-                <p>你可以通过多种方式和我们取得联系</p>
+        <section style="background:#3dc0f1;">
+            <div class="jumbotron">
+                <div class="container text-center">
+                    <h2>您的信任，成就一切。</h2>
+                    <p>你可以通过多种方式和我们取得联系</p>
+                </div>
             </div>
-        </div>
+        </section>
+
         <!--content-->
         <section>
             <div class="container">
@@ -185,11 +188,14 @@ export default {
 </script>
 
 <style>
+.contact-icon {
 
+}
 .contact-icon p {
     margin-top: 15px;
 }
 .contact-icon .thumbnail {
+    cursor: pointer;
     background: none;
     border:none;
 }
