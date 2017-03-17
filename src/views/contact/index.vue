@@ -31,8 +31,6 @@
             </div>
         </section>
 
-        <hr class="cut-off-divider">
-
         <section class="contact-icon" style="background:#d9edf7;padding:80px 0;">
             <div class="container">
                 <div class="row">

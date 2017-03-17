@@ -69,7 +69,7 @@ const actions = {
     getProduct({ commit }, payload){
         commit(types.GET_CONTACT_PENDING)
         //开始ajax请求
-        Vue.http.get('/static/mock/data.json').then((response) => {
+        Vue.http.get('/static/mock/data.json',payload).then((response) => {
             //为了模拟网速过慢 使用延时
             setTimeout(function () {
                 // 响应成功回调

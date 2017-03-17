@@ -46,9 +46,9 @@ const router = new VueRouter({
 // 注册路由切换前
 router.beforeEach((to, from, next) => {
   console.log(to.path)
-  // document.body.scrollTop = 0
-  // document.documentElement.scrollTop = 0
-  // window.onscroll = null
+  document.body.scrollTop = 0
+  document.documentElement.scrollTop = 0
+  window.onscroll = null
   next()
 })
 

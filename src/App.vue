@@ -3,7 +3,8 @@
     <div id="app">
 
         <!--header 头部-->
-        <header class="header navbar-fixed-top">
+        <!--<header class="header navbar-fixed-top">-->
+        <header class="header">
             <div class="container">
                 <div class="navbar navbar-default">
                     <div class="navbar-header">

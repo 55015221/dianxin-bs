@@ -52,43 +52,18 @@
         </section>
 
         <!--content-->
-        <hr class="cut-off-divider">
-        <section>
+
+        <section class="cotnent" v-for="(item ,index) in records" :style="'background:'+sectionBg[index]">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-7">
-                        <h2>First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-                        <p class="lead">最受欢迎的前端技术教程网站，但是国内用户一直不能访问，并且国内的中文翻译版本十分陈旧。因此做了个镜像，希望英文好的同学直接去看原版教程吧</p>
+                    <div :class="(index%2 === 1)?'col-sm-7 wow slideInLeft':'col-sm-7 col-sm-push-5 wow slideInRight'">
+                        <h3>{{ item.title }} <span class="text-muted"></span></h3>
+                        <p class="lead">{{ item.content }}</p>
                     </div>
-                    <div class="col-md-5">
+                    <div :class="(index%2 === 1)?'col-sm-5 wow slideInRight':'col-sm-5 col-sm-pull-7 wow slideInLeft'">
                         <img class="img-responsive center-block" data-src="/static/images/placeholder_400x250.svg" alt="400x250" src="/static/images/placeholder_400x250.svg" data-holder-rendered="true">
                     </div>
                 </div>
-
-                <hr class="cut-off-divider">
-
-                <div class="row">
-                    <div class="col-md-7 col-md-push-5">
-                        <h2>Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-                        <p class="lead">最受欢迎的前端技术教程网站，但是国内用户一直不能访问，并且国内的中文翻译版本十分陈旧。因此做了个镜像，希望英文好的同学直接去看原版教程吧</p>
-                    </div>
-                    <div class="col-md-5 col-md-pull-7">
-                        <img class="img-responsive center-block" data-src="/static/images/placeholder_400x250.svg" alt="400x250" src="/static/images/placeholder_400x250.svg" data-holder-rendered="true">
-                    </div>
-                </div>
-
-                <hr class="cut-off-divider">
-
-                <div class="row">
-                    <div class="col-md-7">
-                        <h2>原版国内镜像 <span class="text-muted">Checkmate.</span></h2>
-                        <p class="lead">最受欢迎的前端技术教程网站，但是国内用户一直不能访问，并且国内的中文翻译版本十分陈旧。因此做了个镜像，希望英文好的同学直接去看原版教程吧</p>
-                    </div>
-                    <div class="col-md-5">
-                        <img class="img-responsive center-block" data-src="/static/images/placeholder_400x250.svg" alt="500x500" src="/static/images/placeholder_400x250.svg" data-holder-rendered="true">
-                    </div>
-                </div>
-
             </div>
         </section>
 
@@ -97,17 +72,29 @@
 
 
 <script>
-
+import { mapState } from 'vuex'
 export default {
     name: 'index',
     data () {
         return {
+            sectionBg: [
+                "#fff", "#d2eafb", "#fde3cf", "#cfedf0", "#f7f7f7"
+            ]
         }
     },
     components: {
     },
+    computed: {
+        ...mapState({
+            records: state => state.module.records
+        })
+    },
     created () {
         console.log("created index")
+        this.$store.dispatch('getProduct',{ "type": "product" }).then((ret) => {
+            console.log(ret)
+            this.records = { ...this.records, ret }
+        })
     },
     mounted () {
         console.log("mounted index")
@@ -119,5 +106,9 @@ export default {
 </script>
 
 <style scoped>
+.cotnent {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
 
 </style>

@@ -38,7 +38,7 @@ html {
 
 body {
     position: relative; /* For scrollspy */
-    padding-top: 80px;
+    /*padding-top: 80px;*/
     padding-bottom: 80px;
     font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
     font-size: 14px;
@@ -48,7 +48,6 @@ body {
 }
 .wrapper {
     background: #fff;
-    margin-top: 1px;
 }
 
 /*
@@ -62,7 +61,7 @@ body {
     padding-top: 15px;
     padding-bottom: 15px;
     border-bottom: 1px solid #bbb;
-    box-shadow: 1px 1px 8px rgba(0,0,0,.4);
+    /*box-shadow: 1px 1px 8px rgba(0,0,0,.4);*/
 }
 
 .navbar {
