@@ -51,6 +51,23 @@
             </div>
         </section>
 
+
+        <section style="background: #f8f8f8; padding:120px 0;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6" v-for="(item ,index) in records" style="margin-bottom: 15px;">
+                        <div class="col-md-4">
+                            <img class="img-rounded img-responsive center-block" data-src="/static/images/placeholder_400x250.svg" alt="400x250" src="/static/images/placeholder_400x250.svg" data-holder-rendered="true">
+                        </div>
+                        <div class="col-md-8">
+                            <h4>{{ item.title }} <span class="text-muted"></span></h4>
+                            <p>{{ item.content }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!--content-->
 
         <section class="cotnent" v-for="(item ,index) in records" :style="'background:'+sectionBg[index]">
@@ -66,6 +83,8 @@
                 </div>
             </div>
         </section>
+
+
 
     </div>
 </template>

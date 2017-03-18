@@ -1,11 +1,12 @@
 <template>
     <div class="template-wrapper">
 
-        <section style="background:#5dcadd;">
-            <div class="jumbotron wow bounceIn">
+        <section style="background:#eee;">
+            <div class="jumbotron wow zoomIn">
                 <div class="container">
                     <h2>产品与服务</h2>
-                    <p class="lead">集成报价单、订单、购销、交付、往来债权债务、工资、报销模块等提供用户认证以及信用指数据评估等服务 提升往来管理效率，提高往来管理效果，为客户整体业务发展提供支持</p>
+                    <p>集成报价单、订单、购销、交付、往来债权债务、工资、报销模块等提供用户认证以及信用指数据评估等服务 提升往来管理效率，提高往来管理效果，为客户整体业务发展提供支持
+                    </p>
                 </div>
             </div>
         </section>

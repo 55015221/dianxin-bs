@@ -2,7 +2,7 @@
     <div class="template-wrapper">
 
         <section class="" style="background:#3dc0f1;">
-            <div class="jumbotron wow bounceIn">
+            <div class="jumbotron wow zoomIn">
                 <div class="container text-center">
                     <h2>您的信任，成就一切。</h2>
                     <p>你可以通过多种方式和我们取得联系</p>
@@ -12,17 +12,17 @@
 
         <!--content-->
         <section>
-            <div class="container">
+            <div class="container content">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <address class="">
-                            <p><strong>{{ record.company }}</strong></p>
-                            地址：{{ record.address }}<br>
-                            服务邮件：<a :href="'mailto:'+ record.serviceEmail">{{ record.serviceEmail }}</a><br>
-                            合作邮件：<a :href="'mailto:'+ record.cooperateEmail">{{ record.cooperateEmail }}</a><br>
-                            电话：{{ record.telephone }}<br>
-                            手机：{{ record.mobile }}<br>
-                            QQ：{{ record.qq }}<br>
+                        <address class="addr">
+                            <h2>{{ record.company }}</h2>
+                            <p>地址：{{ record.address }}</p>
+                            <p>服务邮件：<a :href="'mailto:'+ record.serviceEmail">{{ record.serviceEmail }}</a></p>
+                            <p>合作邮件：<a :href="'mailto:'+ record.cooperateEmail">{{ record.cooperateEmail }}</a></p>
+                            <p>电话：{{ record.telephone }}</p>
+                            <p>手机：{{ record.mobile }}</p>
+                            <p>QQ：{{ record.qq }}</p>
                         </address>
                         <!--百度地图容器-->
                         <div style="height:300px;font-size:12px" id="map"></div>
@@ -186,6 +186,9 @@ export default {
 </script>
 
 <style scoped>
+address {
+    line-height: 1.8
+}
 .contact-icon {
 
 }
