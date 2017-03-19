@@ -55,7 +55,7 @@
         <section style="background: #f8f8f8; padding:120px 0;">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6" v-for="(item ,index) in records" style="margin-bottom: 15px;">
+                    <div class="col-sm-6" v-for="(item ,index) in records" style="margin-bottom: 15px;">
                         <div class="col-md-4">
                             <img class="img-rounded img-responsive center-block" data-src="/static/images/placeholder_400x250.svg" alt="400x250" src="/static/images/placeholder_400x250.svg" data-holder-rendered="true">
                         </div>
@@ -110,16 +110,17 @@ export default {
     },
     created () {
         console.log("created index")
-        this.$store.dispatch('getProduct',{ "type": "product" }).then((ret) => {
-            console.log(ret)
-            this.records = { ...this.records, ret }
-        })
+        this.$store.dispatch('getProduct',{ "method": "getProduct" })
+
     },
     mounted () {
         console.log("mounted index")
     },
     methods:{
-
+        remove(arr){
+            console.log(arr)
+            return arr
+        }
     }
 }
 </script>

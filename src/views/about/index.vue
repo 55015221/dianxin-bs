@@ -1,11 +1,11 @@
 <template>
     <div class="template-wrapper">
 
-        <section style="background:#eee;">
+        <section style="background:url('/static/images/banner.png') no-repeat; background-size:cover;">
             <div class="jumbotron wow zoomIn">
                 <div class="container text-center">
                     <h2>关于我们</h2>
-                    <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
+                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
                 </div>
             </div>
         </section>
