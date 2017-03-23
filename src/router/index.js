@@ -26,7 +26,7 @@ Vue.http.options.headers = {
 Vue.http.options.emulateJSON = true
 
 const router = new VueRouter({
-  mode: 'history',   //URL 不会带#
+  //mode: 'history',   //URL 不会带# 将会导致直接输入地址返回404
   base: __dirname,
   //设置 链接激活时使用的 CSS 类名。默认值可以通过路由的构造选项 linkActiveClass 来全局配置。
   linkActiveClass: 'active',
