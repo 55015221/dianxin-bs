@@ -46,9 +46,8 @@ export default {
     },
     created () {
         console.log("created about")
-        this.$store.dispatch('getAbout',{ "method": "getAbout" }).then((ret) => {
-            console.log(ret)
-            this.records = { ...this.records, ret }
+        this.$store.dispatch('getAbout',{ "method": "getAbout" }).then((res) => {
+            console.log(res)
         })
     },
     mounted () {

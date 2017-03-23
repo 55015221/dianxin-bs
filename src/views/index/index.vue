@@ -108,24 +108,23 @@ export default {
     },
     created () {
         console.log("created index")
-        this.$store.dispatch('getProduct',{ "method": "getProduct" })
+        this.$store.dispatch('getProduct',{ "method": "getProduct" }).then((res) => {
+
+        })
     },
     mounted () {
         console.log("mounted index")
     },
     methods:{
-        remove(arr){
-            console.log(arr)
-            return arr
-        }
+
     }
 }
 </script>
 
 <style scoped>
-.carousel {
-    height: 400px;
-    max-height: 400px;
+.carousel, .listbox {
+    max-height: 300px;
+    overflow: hidden;
 }
 
 .content {

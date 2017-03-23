@@ -45,10 +45,7 @@ export default {
     created () {
         console.log("created questions")
         this.$store.dispatch('getQuestions', { "method":"getQuestions" }).then((res) => {
-            this.records = {...this.records, res}
-            console.log(this.records)
         })
-        new WOW().init();
     },
     mounted () {
         console.log("mounted questions")

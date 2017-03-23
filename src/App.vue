@@ -33,14 +33,6 @@
 
         <!--wrapper 主体-->
         <main class="wrapper">
-            <transition
-                enter-class=""
-                enter-active-class="animated fadeIn"
-                leave-class=""
-                leave-active-class=""
-                >
-
-            </transition>
             <transition name="router-fade" mode="out-in">
               <router-view></router-view>
             </transition>
@@ -66,7 +58,7 @@ export default {
   name: 'app',
   data () {
     return {
-        menuList: {}
+
     }
   },
   components: {
@@ -79,13 +71,14 @@ export default {
   },
   created () {
       console.log("created app")
-      this.$store.dispatch('getMenuList',{}).then((res) => {
-          this.menuList = {...this.menuList, ...res}
+      this.$store.dispatch('getMenuList',{"method":"getMenuList"}).then((res) =>{
+
       })
   },
   mounted () {
       console.log("mounted app")
-
+      //初始化动画
+      new WOW().init();
   }
 }
 </script>

@@ -16,13 +16,13 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <address class="addr">
-                            <h2>{{ record.company }}</h2>
-                            <p>地址：{{ record.address }}</p>
-                            <p>服务邮件：<a :href="'mailto:'+ record.serviceEmail">{{ record.serviceEmail }}</a></p>
-                            <p>合作邮件：<a :href="'mailto:'+ record.cooperateEmail">{{ record.cooperateEmail }}</a></p>
-                            <p>电话：{{ record.telephone }}</p>
-                            <p>手机：{{ record.mobile }}</p>
-                            <p>QQ：{{ record.qq }}</p>
+                            <h2>{{ records.company }}</h2>
+                            <p>地址：{{ records.address }}</p>
+                            <p>服务邮件：<a :href="'mailto:'+ records.serviceEmail">{{ records.serviceEmail }}</a></p>
+                            <p>合作邮件：<a :href="'mailto:'+ records.cooperateEmail">{{ records.cooperateEmail }}</a></p>
+                            <p>电话：{{ records.telephone }}</p>
+                            <p>手机：{{ records.mobile }}</p>
+                            <p>QQ：{{ records.qq }}</p>
                         </address>
                         <!--百度地图容器-->
                         <div style="height:300px;font-size:12px" id="map"></div>
@@ -39,7 +39,7 @@
                             <i class="fa fa-envelope-o fa-5x"></i>
 
                             <div class="caption">
-                                <p><a :href="'mailto:'+ record.serviceEmail">{{ record.serviceEmail }}</a></p>
+                                <p><a :href="'mailto:'+ records.serviceEmail">{{ records.serviceEmail }}</a></p>
                             </div>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                             <span class="glyphicon glyphicon-envelope fa-5x" aria-hidden="true"></span>
 
                             <div class="caption">
-                                <p><a :href="'mailto:'+ record.cooperateEmail">{{ record.cooperateEmail }}</a></p>
+                                <p><a :href="'mailto:'+ records.cooperateEmail">{{ records.cooperateEmail }}</a></p>
                             </div>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                             <span class="glyphicon glyphicon-phone fa-5x" aria-hidden="true"></span>
 
                             <div class="caption">
-                                <p>{{ record.telephone }}</p>
+                                <p>{{ records.telephone }}</p>
                             </div>
                         </div>
                     </div>
@@ -69,7 +69,7 @@
                             <i class="fa fa-qq fa-5x"></i>
 
                             <div class="caption">
-                                <p>{{ record.qq }}</p>
+                                <p>{{ records.qq }}</p>
                             </div>
                         </div>
                     </div>
@@ -77,19 +77,19 @@
                     <!--
                     <div class="col-md-3 text-center">
                         <i class="fa fa-envelope-o fa-5x"></i>
-                        <p><a :href="'mailto:'+ record.serviceEmail">{{ record.serviceEmail }}</a></p>
+                        <p><a :href="'mailto:'+ records.serviceEmail">{{ records.serviceEmail }}</a></p>
                     </div>
                     <div class="col-md-3 text-center">
                         <span class="glyphicon glyphicon-envelope fa-5x" aria-hidden="true"></span>
-                        <p><a :href="'mailto:'+ record.cooperateEmail">{{ record.cooperateEmail }}</a></p>
+                        <p><a :href="'mailto:'+ records.cooperateEmail">{{ records.cooperateEmail }}</a></p>
                     </div>
                     <div class="col-md-3 text-center">
                         <span class="glyphicon glyphicon-phone fa-5x" aria-hidden="true"></span>
-                        <p>{{ record.telephone }}</p>
+                        <p>{{ records.telephone }}</p>
                     </div>
                     <div class="col-md-3 text-center">
                         <i class="fa fa-qq fa-5x"></i>
-                        <p>{{ record.qq }}</p>
+                        <p>{{ records.qq }}</p>
                     </div>
                     -->
                 </div>
@@ -102,22 +102,26 @@
 
 <script>
 
-
+import { mapState } from 'vuex'
 export default {
     name: 'contact',
     data () {
         return {
             map:{},
-            record: {}
         }
     },
     components: {
     },
+    computed: {
+        ...mapState({
+            records: state => state.module.records
+        })
+    },
     created () {
         console.log("created contact")
         this.init()
-        this.$store.dispatch('getContact',{}).then((res)=>{
-            this.record = {...this.record, ...res}
+        this.$store.dispatch('getContact',{ "method": "getProduct" }).then((res) => {
+
         })
     },
     mounted () {

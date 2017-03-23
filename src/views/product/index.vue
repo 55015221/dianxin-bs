@@ -61,12 +61,11 @@ export default {
     created () {
         console.log("created product")
         this.$store.dispatch('getProduct',{"method":"getProduct"}).then((res) => {
-            this.records = {...this.records, ...res}
+
         })
     },
     mounted () {
         console.log("mounted product")
-        new WOW().init();
     },
     methods:{
 
