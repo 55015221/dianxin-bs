@@ -15,7 +15,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a href="/" class="navbar-brand">Bootstrap</a>
+                        <a href="/" class="navbar-brand">Logo</a>
                     </div>
                     <nav id="bs-navbar" class="navbar-collapse collapse" aria-expanded="true">
                         <ul class="nav navbar-nav">
@@ -24,7 +24,7 @@
                             </template>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="">主题/模板</a></li>
+                            <li><a href="">管理后台</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -46,13 +46,11 @@
             </transition>
         </main>
 
-        <hr class="cut-off-divider">
-
         <!--header 底部-->
         <footer class="footer">
             <div class="container">
                 <div style="transform: translate(0px, 0px); opacity: 1;">
-                    <span>Copyright &copy; 2017 The Project by <a href="#">Ant Motion</a>. All Rights Reserved</span>
+                    <span>Copyright &copy; 2017 The Project by <a href="#">Basicredit.com</a>. All Rights Reserved</span>
                </div>
             </div>
         </footer>

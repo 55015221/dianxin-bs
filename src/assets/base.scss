@@ -41,10 +41,12 @@ body {
     /*padding-top: 80px;*/
     padding-bottom: 80px;
     font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-    font-size: 14px;
+    /*font-family: "Microsoft YaHei", 宋体, Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+    font-size: 15px;
     line-height: 1.5;
     color: #444;
     background: #fff;
+    font-weight: normal;
 }
 .wrapper {
     background: #fff;
@@ -114,11 +116,13 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%;
+    margin-top: 30px;
     padding-top: 30px;
     padding-bottom: 30px;
     text-align: center;
     min-height: 60px;
     background: #eee;
+    border-top: solid 1px #ddd;
     color: #666;
     font-size: 12px;
 }

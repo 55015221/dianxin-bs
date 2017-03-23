@@ -70,7 +70,7 @@
 
         <!--content-->
 
-        <section class="cotnent" v-for="(item ,index) in records" :style="'background:'+sectionBg[index]">
+        <section class="content" v-for="(item ,index) in records" :style="'background:'+sectionBg[index]">
             <div class="container">
                 <div class="row">
                     <div :class="(index%2 === 1)?'col-sm-7 wow slideInLeft':'col-sm-7 col-sm-push-5 wow slideInRight'">
@@ -83,8 +83,6 @@
                 </div>
             </div>
         </section>
-
-
 
     </div>
 </template>
@@ -111,7 +109,6 @@ export default {
     created () {
         console.log("created index")
         this.$store.dispatch('getProduct',{ "method": "getProduct" })
-
     },
     mounted () {
         console.log("mounted index")
@@ -126,7 +123,12 @@ export default {
 </script>
 
 <style scoped>
-.cotnent {
+.carousel {
+    height: 400px;
+    max-height: 400px;
+}
+
+.content {
     padding-top: 120px;
     padding-bottom: 120px;
 }
