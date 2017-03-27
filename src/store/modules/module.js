@@ -38,26 +38,37 @@ const actions = {
      */
         getMenuList({ commit }, payload) {
         commit(types.GET_MENU_LIST_PENDING)
-        if (mockJson.code === 1000) {
-            commit(types.GET_MENU_LIST_SUCCESS, mockJson.data.menuList)
-        } else {
-            commit(types.GET_MENU_LIST_FAILURE)
-        }
-        return mockJson.data.menuList
+
+        //开始ajax请求
+        Vue.http.get('/api/static/mock/data.json?method=' + payload.method, payload).then((response) => {
+            // 响应成功回调
+            if (response.status === 200 && response.body.code === 1000) {
+                commit(types.GET_MENU_LIST_SUCCESS, response.body.data.menuList)
+            } else {
+                commit(types.GET_MENU_LIST_FAILURE)
+            }
+        }, (response) => {
+            // 响应错误回调
+            console.log("http error", response)
+        });
     },
     /**
      * 获取联系方式
      */
-        getContact({ commit }, payload){
+    getContact({ commit }, payload){
         commit(types.GET_CONTACT_PENDING)
-
-        if (mockJson.code === 1000) {
-            commit(types.GET_CONTACT_SUCCESS, mockJson.data.contact)
-        } else {
-            commit(types.GET_CONTACT_FAILURE)
-        }
-
-        return mockJson.data.contact
+        //开始ajax请求
+        Vue.http.get('/static/mock/data.json?method=' + payload.method, payload).then((response) => {
+            // 响应成功回调
+            if (response.status === 200 && response.body.code === 1000) {
+                commit(types.GET_CONTACT_SUCCESS, response.body.data.contact)
+            } else {
+                commit(types.GET_CONTACT_FAILURE)
+            }
+        }, (response) => {
+            // 响应错误回调
+            console.log("http error", response)
+        });
     },
     /**
      * 获取产品数据
@@ -79,43 +90,60 @@ const actions = {
             // 响应错误回调
             console.log("http error", response)
         });
-
     },
     /**
      * 获取客户问答数据
      */
-        getQuestions({ commit }, payload){
+    getQuestions({ commit }, payload){
         commit(types.GET_CONTACT_PENDING)
-        if (mockJson.code === 1000) {
-            commit(types.GET_CONTACT_SUCCESS, mockJson.data.questions)
-        } else {
-            commit(types.GET_CONTACT_FAILURE)
-        }
-        return mockJson.data.questions
+        //开始ajax请求
+        Vue.http.get('/static/mock/data.json?method=' + payload.method, payload).then((response) => {
+            // 响应成功回调
+            if (response.status === 200 && response.body.code === 1000) {
+                commit(types.GET_CONTACT_SUCCESS, response.body.data.questions)
+            } else {
+                commit(types.GET_CONTACT_FAILURE)
+            }
+        }, (response) => {
+            // 响应错误回调
+            console.log("http error", response)
+        });
     },
     /**
      * 获取关于我们数据
      */
-        getAbout({ commit }, payload){
+    getAbout({ commit }, payload){
         commit(types.GET_CONTACT_PENDING)
-        if (mockJson.code === 1000) {
-            commit(types.GET_CONTACT_SUCCESS, mockJson.data.about)
-        } else {
-            commit(types.GET_CONTACT_FAILURE)
-        }
-        return mockJson.data.about
+        //开始ajax请求
+        Vue.http.get('/static/mock/data.json?method=' + payload.method, payload).then((response) => {
+            // 响应成功回调
+            if (response.status === 200 && response.body.code === 1000) {
+                commit(types.GET_CONTACT_SUCCESS, response.body.data.about)
+            } else {
+                commit(types.GET_CONTACT_FAILURE)
+            }
+        }, (response) => {
+            // 响应错误回调
+            console.log("http error", response)
+        });
     },
     /**
      * 获取幻灯片数据
      */
-        getSlider({ commit }, payload){
+    getSlider({ commit }, payload){
         commit(types.GET_CONTACT_PENDING)
-        if (mockJson.code === 1000) {
-            commit(types.GET_CONTACT_SUCCESS, mockJson.data.slider)
-        } else {
-            commit(types.GET_CONTACT_FAILURE)
-        }
-        return mockJson.data.slider
+        //开始ajax请求
+        Vue.http.get('/static/mock/data.json?method=' + payload.method, payload).then((response) => {
+            // 响应成功回调
+            if (response.status === 200 && response.body.code === 1000) {
+                commit(types.GET_CONTACT_SUCCESS, response.body.data.slider)
+            } else {
+                commit(types.GET_CONTACT_FAILURE)
+            }
+        }, (response) => {
+            // 响应错误回调
+            console.log("http error", response)
+        });
     }
 
 }
